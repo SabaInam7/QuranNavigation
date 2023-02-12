@@ -46,7 +46,7 @@ public class ParahDetail extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int  num=position+1;
-                Toast.makeText(ParahDetail.this, "You clicked on: "+num, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(ParahDetail.this, "You clicked on: "+num, Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(ParahDetail.this,MainActivity.class);
                 intent.putExtra("Index", num);
                 startActivity(intent);

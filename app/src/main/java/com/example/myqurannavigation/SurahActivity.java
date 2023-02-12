@@ -1,10 +1,17 @@
 package com.example.myqurannavigation;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -24,6 +31,7 @@ public class SurahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah);
         suarhName=getIntent().getExtras().get("SurahName").toString();
+
         LVAyat=findViewById(R.id.lvAyat);
         String jsondata="";
         try {
@@ -51,20 +59,36 @@ public class SurahActivity extends AppCompatActivity {
 
         AyatAdapter= new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,arrayList);
         LVAyat.setAdapter(AyatAdapter);
+        LVAyat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = AyatAdapter.getItem(position);
+                String currentItem=AyatAdapter.getItem(position).toString();
+                Toast.makeText(SurahActivity.this, "You clicked: "+currentItem, Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(SurahActivity.this,Translations.class);
+                intent.putExtra("SurahName", currentItem);
+                startActivity(intent);
+            }
+        });
 
     }
-    String getSurahDetail(List<QuranModel> surah, String suarhName  ){
+    String getSurahDetail(List<QuranModel> surah, String surahName  ){
+
         String str="";
         String surahNum;
         for(QuranModel obj:surah){
 
-            if(obj.getSurah_name()==suarhName ){
-                if (!str.contains(obj.getSurah_name())) {
+            if (surahName.trim().equals(obj.getSurah_name())){
 
-                    str=obj.getText()+"\n\n";
-                    surahNum=""+obj.getSurah_number();
-                    arrayList.add(str);}
+               // Toast.makeText(SurahActivity.this, surahName, Toast.LENGTH_SHORT).show();
+
+                    str=obj.getText();
+
+                surahNum=""+obj.getSurah_number();
+                    arrayList.add(str);
             }
+
         }
         return str;
     }

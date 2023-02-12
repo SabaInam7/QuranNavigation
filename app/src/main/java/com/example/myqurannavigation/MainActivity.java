@@ -75,15 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//        String surah=adapterView.getItemAtPosition(i).toString();
-//
-//        Toast.makeText(getApplicationContext(), "Clicked"+surah+(i+1), Toast.LENGTH_SHORT).show();
-////
-////        surahNumber=i;
-////        surahStart=q.SSP[i];
-//
-//    }
     String getParahDetail(List<QuranModel> parahList, int num  ){
         String str="";
         String surahNum;
@@ -92,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
             if(obj.getJuz()==num ){
                 if (!str.contains(obj.getSurah_name())) {
 
-                str=obj.getSurah_name()+"\n\n";
-                surahNum=""+obj.getSurah_number();
+                str=obj.getSurah_name();
+
                 arrayList.add(str);}
             }
         }
