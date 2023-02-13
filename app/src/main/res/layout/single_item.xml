@@ -2,223 +2,85 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:id="@+id/TranslationsLayout"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="4dp"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="553dp"
+            android:layout_width="401dp"
+            android:layout_height="510dp"
             android:fillViewport="true"
-            android:padding="4dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ETEngTran"
-            app:layout_constraintEnd_toEndOf="@+id/TVname"
-            app:layout_constraintStart_toEndOf="@+id/TVname"
-            app:layout_constraintTop_toBottomOf="@+id/ETEngTran">
+            android:padding="4dp">
 
             <TextView
                 android:id="@+id/EThindiTaf"
-                android:layout_width="0dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginBottom="19dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="167dp"
+                android:layout_marginBottom="120dp"
                 android:text="manzil"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/ETUrdutaf"
-                app:layout_constraintStart_toStartOf="@+id/ETUrdutaf"
-                app:layout_constraintTop_toBottomOf="@+id/EThindiTran" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="72dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="27dp"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="HindiTran"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/EThindiTran"
-                app:layout_constraintEnd_toStartOf="@+id/EThindiTran"
-                app:layout_constraintTop_toTopOf="@+id/EThindiTran" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="0dp"
-                android:layout_height="29dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="HindiTaf"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/EThindiTaf"
-                app:layout_constraintEnd_toEndOf="@+id/textView11"
-                app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="@+id/EThindiTaf" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/EThindiTran"
-                android:layout_width="0dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:layout_marginBottom="98dp"
+                android:layout_marginBottom="40dp"
                 android:text="manzil"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/EThindiTaf"
-                app:layout_constraintStart_toStartOf="@+id/ETEngTaf" />
+                app:layout_constraintBottom_toTopOf="@+id/EThindiTaf"
+                app:layout_constraintEnd_toEndOf="@+id/EThindiTaf" />
 
             <TextView
                 android:id="@+id/ETUrdutaf"
-                android:layout_width="154dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="58dp"
-                android:layout_marginEnd="73dp"
-                android:layout_marginBottom="59dp"
-                android:text="manzil"
-                app:layout_constraintBottom_toTopOf="@+id/textView11"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView6" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="72dp"
-                android:layout_height="29dp"
-                android:layout_marginEnd="11dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="UrduTaf"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ETUrdutaf"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintTop_toTopOf="@+id/ETUrdutaf" />
-
-            <TextView
-                android:id="@+id/TVst_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="21dp"
-                android:text="1"
-                android:textColor="#000"
-                android:textSize="28sp"
-                android:textStyle="bold"
+                android:layout_marginBottom="43dp"
+                android:text="manzil"
+                app:layout_constraintBottom_toTopOf="@+id/EThindiTran"
+                app:layout_constraintStart_toStartOf="@+id/EThindiTran" />
+
+            <TextView
+                android:id="@+id/ETEngTran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="169dp"
+                android:layout_marginTop="75dp"
+                android:text="sabq"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TVrollNo"
+                android:id="@+id/ETEngTaf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="43dp"
-                android:layout_marginEnd="35dp"
-                android:text="RollNo"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/ETUrduTran"
-                app:layout_constraintStart_toEndOf="@+id/TVst_id"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/ETEngTran"
-                android:layout_width="147dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="88dp"
-                android:layout_marginEnd="89dp"
-                android:text="sabq"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView4" />
-
-            <TextView
-                android:id="@+id/ETEngTaf"
-                android:layout_width="146dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="89dp"
-                android:layout_marginEnd="89dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="35dp"
                 android:text="sabqi"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView4" />
+                app:layout_constraintStart_toStartOf="@+id/ETEngTran"
+                app:layout_constraintTop_toBottomOf="@+id/ETEngTran" />
 
             <TextView
                 android:id="@+id/ETUrduTran"
-                android:layout_width="0dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="33dp"
-                android:text="manzil"
-                app:layout_constraintBottom_toTopOf="@+id/textView7"
-                app:layout_constraintEnd_toEndOf="@+id/ETUrdutaf"
-                app:layout_constraintStart_toStartOf="@+id/ETEngTaf"
-                app:layout_constraintTop_toBottomOf="@+id/ETEngTaf" />
-
-            <TextView
-                android:id="@+id/TVname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="141dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="141dp"
-                android:text="name"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/TVrollNo"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="37dp"
+                android:text="manzil"
+                app:layout_constraintEnd_toEndOf="@+id/ETEngTaf"
+                app:layout_constraintTop_toBottomOf="@+id/ETEngTaf" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="58dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="39dp"
-                android:layout_marginTop="102dp"
-                android:layout_marginEnd="39dp"
-                android:layout_marginBottom="102dp"
-                android:fontFamily="sans-serif"
-                android:text="EngTran"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/ETUrduTran"
-                app:layout_constraintEnd_toStartOf="@+id/ETUrdutaf"
-                app:layout_constraintStart_toEndOf="@+id/TVst_id"
-                app:layout_constraintTop_toTopOf="@+id/TVname"
-                tools:fontFamily="sans-serif-medium" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="111dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="112dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="EngTaf"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/ETUrdutaf"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="@+id/TVrollNo"
-                app:layout_constraintTop_toBottomOf="@+id/TVst_id" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="72dp"
-                android:layout_height="31dp"
-                android:layout_marginEnd="20dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="UrduTran"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ETUrduTran"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

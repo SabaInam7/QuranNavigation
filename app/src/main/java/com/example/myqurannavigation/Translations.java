@@ -19,6 +19,8 @@ public class Translations extends AppCompatActivity {
     RecyclerView recyclerView;
     MyRVAdapter rvAdapter;
     String Ayat;
+    ArrayList<String> arrayList= new ArrayList<>();
+
     private ArrayList<String> UrduTran, UrduTafs, EngTran, EngTafs,HndiTran, HindiTafs;
 
     @Override
@@ -26,10 +28,9 @@ public class Translations extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translations);
         Ayat=getIntent().getExtras().get("SurahName").toString();
-        Toast.makeText(Translations.this, "You clickeded: "+Ayat, Toast.LENGTH_SHORT).show();
 
 
-        String jsondata="";
+        String JSondata="";
         try {
 
             InputStream is = getAssets().open("QuranMetaData.json");
@@ -37,8 +38,8 @@ public class Translations extends AppCompatActivity {
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            jsondata = new String(buffer, "UTF-8");
-            System.out.println(jsondata);
+            JSondata = new String(buffer, "UTF-8");
+            System.out.println(JSondata);
 
         }
         catch (Exception ex)
@@ -49,14 +50,21 @@ public class Translations extends AppCompatActivity {
 
         Gson gson = new Gson();
         Type listType = new TypeToken<List<QuranModel>>(){}.getType();
-        List<QuranModel> objectList = gson.fromJson(jsondata, listType);
+        List<QuranModel> objectList = gson.fromJson(JSondata, listType);
+       // Toast.makeText(Translations.this, "You clickeded: "+Ayat, Toast.LENGTH_SHORT).show();
+        UrduTafs= new ArrayList<>();
+        UrduTran = new ArrayList<>();
+        EngTran = new ArrayList<>();
+        HndiTran = new ArrayList<>();
+        EngTafs = new ArrayList<>();
+        HindiTafs = new ArrayList<>();
         getSurahDetail(objectList,Ayat);
 
 
-//        recyclerView = findViewById(R.id.recyclerView);
-//        rvAdapter= new MyRVAdapter(Translations.this,this,UrduTran, UrduTafs, EngTran, EngTafs,HndiTran, HindiTafs);
-//        recyclerView.setAdapter(rvAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(Translations.this));
+        recyclerView = findViewById(R.id.recyclerView);
+        rvAdapter= new MyRVAdapter(Translations.this,this,UrduTran, UrduTafs, EngTran, EngTafs,HndiTran, HindiTafs);
+        recyclerView.setAdapter(rvAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Translations.this));
 
 
     }
@@ -68,12 +76,8 @@ public class Translations extends AppCompatActivity {
 
             if (Ayat.trim().equals(obj.getText())){
 
-                // Toast.makeText(SurahActivity.this, surahName, Toast.LENGTH_SHORT).show();
-
-                //str=obj.getText();
-
-                //surahNum=""+obj.getSurah_number();
-                UrduTafs.add(obj.getUrduTafseer());
+                Toast.makeText(Translations.this, obj.getUrduTranslation(), Toast.LENGTH_SHORT).show();
+               UrduTafs.add(obj.getUrduTafseer());
                 UrduTran.add(obj.getUrduTranslation());
                 EngTafs.add(obj.getEnglishTranslation());
                 EngTran.add(obj.getEnglishtafseer());

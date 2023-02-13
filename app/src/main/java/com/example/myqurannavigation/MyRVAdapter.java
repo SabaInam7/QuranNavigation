@@ -39,12 +39,12 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull MyRVAdapter.MyViewHolder holder, int position) {
-        holder.UrduTran.setText(String.valueOf(UrduTran.get(position)));
-        holder.UrduTafs.setText(String.valueOf(UrduTafs.get(position)));
-        holder.EngTafs.setText(String.valueOf(EngTran.get(position)));
-        holder.EngTran.setText(String.valueOf(EngTafs.get(position)));
-        holder.HindiTafs.setText(String.valueOf(HindiTafs.get(position)));
-        holder.HndiTran.setText(String.valueOf(HndiTran.get(position)));
+        holder.UrduTran.setText(String.valueOf(UrduTran.get(position).toString()));
+        holder.UrduTafs.setText(String.valueOf(UrduTafs.get(position).toString()));
+        holder.EngTafs.setText(String.valueOf(EngTran.get(position).toString()));
+        holder.EngTran.setText(String.valueOf(EngTafs.get(position).toString()));
+        holder.HindiTafs.setText(String.valueOf(HindiTafs.get(position).toString()));
+        holder.HndiTran.setText(String.valueOf(HndiTran.get(position).toString()));
 //        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -79,7 +79,7 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
             EngTafs= itemView.findViewById(R.id.ETEngTaf);
             HndiTran= itemView.findViewById(R.id.EThindiTran);
             HindiTafs= itemView.findViewById(R.id.EThindiTaf);
-            mainLayout=itemView.findViewById(R.id.mainLayout);
+            mainLayout=itemView.findViewById(R.id.TranslationsLayout);
 
 
         }

@@ -86,7 +86,7 @@ public class SurahActivity extends AppCompatActivity {
                     str=obj.getText();
 
                 surahNum=""+obj.getSurah_number();
-                    arrayList.add(str);
+                arrayList.add(str);
             }
 
         }
